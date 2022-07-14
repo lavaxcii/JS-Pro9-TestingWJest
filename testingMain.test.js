@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from './main';
+import { capitalize, reverseString, calc, caesarCipher, analyzeArray } from './main';
 
 
 test('return capitalized string', () => {
@@ -9,17 +9,17 @@ test('return reversed string', () => {
   expect(reverseString('kingBay')).toBe('yaBgnik');
 });
 
-test.skip('add 2 + 5', () => {
-  expect(calculator(2, 5)).toBe(7);
+test('add 2 + 5', () => {
+  expect(calc.add(2, 5)).toBe(7);
 });
-test.skip('subtract 5 - 2', () => {
-  expect(calculator(5, 2)).toBe(3);
+test('subtract 5 - 2', () => {
+  expect(calc.subtract(5, 2)).toBe(3);
 });
-test.skip('divide 6 / 3', () => {
-  expect(calculator(6, 3)).toBe(2);
+test('divide 2 * 5', () => {
+  expect(calc.multiply(2, 5)).toBe(10);
 });
-test.skip('multiply 2 + 5', () => {
-  expect(calculator(2, 5)).toBe(10);
+test('multiply 6 / 3', () => {
+  expect(calc.divide(6, 3)).toBe(2);
 });
 
 test.skip('stg', () => {

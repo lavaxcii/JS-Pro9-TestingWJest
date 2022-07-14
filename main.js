@@ -15,9 +15,27 @@ function reverseString(string) {
   return result;
 }
 
-function calculator(a, b) {
-  return a + b;
-}
+// const Calculator = --||--
+const calc = (() => {
+  const add = (num1, num2) => {
+    let result = num1 + num2;
+    return result
+  }
+  const subtract = (num1, num2) => {
+    let result = num1 - num2;
+    return result
+  }
+  const multiply = (num1, num2) => {
+    let result = num1 * num2;
+    return result
+  }
+  const divide = (num1, num2) => {
+    let result = num1 / num2;
+    return result
+  }
+  return { add, subtract, multiply, divide };
+})()
+// const calc = Calculator();
 
 function caesarCipher(a, b) {
   return a + b;
@@ -28,4 +46,4 @@ function analyzeArray(a, b) {
 }
 
 
-module.exports = { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
+module.exports = { capitalize, reverseString, calc, caesarCipher, analyzeArray };
