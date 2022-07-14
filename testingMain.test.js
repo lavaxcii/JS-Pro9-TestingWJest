@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calc, caesarCipher, analyzeArray } from './main';
+import { capitalize, reverseString, calc, cipher, analyzeArray } from './main';
 
 
 test('return capitalized string', () => {
@@ -22,8 +22,11 @@ test('multiply 6 / 3', () => {
   expect(calc.divide(6, 3)).toBe(2);
 });
 
-test.skip('stg', () => {
-  expect(caesarCipher('stg')).toBe('stgButIncipher');
+test('take string and cipher it +1', () => {
+  expect(cipher.cipherIt('abba')).toBe('bccb');
+});
+test('take string and decipher it -1', () => {
+  expect(cipher.decipherIt('bccb')).toBe('abba');
 });
 
 test.skip('some arr with number', () => {

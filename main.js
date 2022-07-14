@@ -37,13 +37,57 @@ const calc = (() => {
 })()
 // const calc = Calculator();
 
-function caesarCipher(a, b) {
-  return a + b;
-}
+const cipher = (() => {
+  let rawString;
+  let result = [];
+  let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  
+  const cipherIt = (string) => {
+    if (rawString === undefined) {
+      rawString = undefined;
+      result = []
+    } else {
+      rawString = undefined;
+      result = [];
+    }
+    rawString = string.split('');
+    for (let i = 0; i <= rawString.length - 1; i++) {
+      for (let j = 0; j <= alphabet.length - 1; j++) {
+        if (rawString[i] === alphabet[j]) {
+          result.push(alphabet[j + 1]);
+        };
+      };
+    };
+    result = result.toString().replace(/,/g, "");
+    return result;
+  };
+
+  const decipherIt = (string) => {
+    if (rawString === undefined) {
+      rawString = undefined;
+      result = []
+    } else {
+      rawString = undefined;
+      result = [];
+    }
+    rawString = string.split('');
+    for (let i = 0; i <= rawString.length - 1; i++) {
+      for (let j = 0; j <= alphabet.length - 1; j++) {
+        if (rawString[i] === alphabet[j]) {
+          result.push(alphabet[j - 1]);
+        };
+      };
+    };
+    result = result.toString().replace(/,/g, "");
+    return result;
+  };  
+
+  return { cipherIt, decipherIt };
+})()
 
 function analyzeArray(a, b) {
   return a + b;
 }
 
 
-module.exports = { capitalize, reverseString, calc, caesarCipher, analyzeArray };
+module.exports = { capitalize, reverseString, calc, cipher, analyzeArray };
