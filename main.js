@@ -85,8 +85,26 @@ const cipher = (() => {
   return { cipherIt, decipherIt };
 })()
 
-function analyzeArray(a, b) {
-  return a + b;
+function analyzeArray(array) {
+  const arr = array;
+  let average;
+  let min;
+  let max;
+  let arrLength;
+
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (arr[i] < min || min === undefined) {
+      min = arr[i];
+    } 
+    if (arr[i] > max || max === undefined) {
+      max = arr[i];
+    }
+  };
+
+  average = Math.round((max - min) / 2);
+  arrLength = arr.length;
+
+  return { average: average, min: min, max: max, arrLength: arrLength };
 }
 
 
